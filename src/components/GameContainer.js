@@ -19,7 +19,6 @@ class GameContainer extends React.Component {
       <Game
         onClick={this.onClick}
         clicked={this.state.clicked}
-        disable={this.disable}
       />
     )
   }
