@@ -3,10 +3,14 @@ import React from 'react';
 class Game extends React.Component {
   render() {
     const onClick = this.props.onClick
-    const clicked = this.props.clicked
+    // const clicked = this.props.clicked
+    const counter = this.props.counter
 
     return (
-      <button disabled={clicked} onClick={onClick}>CLICK ME!</button>
+      <div>
+        <h1>{counter}</h1>
+        <button onClick={onClick}>CLICK ME!</button>
+      </div>
     )
   }
 }

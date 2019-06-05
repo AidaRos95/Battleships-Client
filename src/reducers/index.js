@@ -1,19 +1,35 @@
 import { combineReducers } from 'redux'
 
-const TURN_TAKEN = 'TURN_TAKEN'
-const turns = (state = [], action) => {
+const buttonClick = (state = [], action) => {
   switch (action.type) {
-    case TURN_TAKEN:
-      return action.payload
+    case 'BUTTON_CLICKED':
+      return [...state, action.payload]
     default:
       return state
   }
 }
 
-const CLICKED = 'CLICKED'
-const buttonClick = (state = false, action) => {
+const users = (state = [], action) => {
   switch (action.type) {
-    case CLICKED:
+    case 'NEW_USER':
+      return action.payload
+    case 'USER_LEFT':
+      // state.filter(id => {
+      //   console.log(action.payload)
+      //   if (id !== action.payload) {
+      //     return id
+      //   }
+      return null
+      //})
+    break;
+    default:
+      return state
+  }
+}
+
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT_COUNTER':
       return action.payload
     default:
       return state
@@ -21,8 +37,9 @@ const buttonClick = (state = false, action) => {
 }
 
 const reducer = combineReducers({ 
-  turns,
-  buttonClick
+  buttonClick,
+  users,
+  counter
 })
 
 export default reducer
