@@ -5,28 +5,28 @@ import { buttonClicked } from '../actions'
 
 class GameContainer extends React.Component {
   state = {
-    clicked: false
+    board: [0, 0, 0, 0]
   }
 
-  onClick = () => {
-    console.log('Click received!')
-    if (this.state.clicked === false) {
-      this.setState({clicked: true})
-    } else {
-      this.setState({clicked: false})
-    }
-    this.props.buttonClicked(this.state.clicked)
-    console.log('STATE UPDATED:', this.state)
-    console.log('THIS.PROPS.COUNTER:', this.props.counter)
+  componentWillMount = () => {
+    console.log('EMPTY BOARD', this.state.board)
+    const newBoard = this.state.board
+    const treasure = Math.floor(Math.random() * 4)
+    newBoard[treasure] = 1
+    console.log("BOARD:", newBoard)
+    return newBoard
+  }
+
+  onClick = (event) => {
+    console.log('Click received!', event.target.id)
   }
 
   render() {
+
     return (
       <Game
         onClick={this.onClick}
-        clicked={this.state.clicked}
-        counter={this.props.counter}
-        
+        // board={this.newBoard}
       />
     )
   }

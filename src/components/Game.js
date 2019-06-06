@@ -3,13 +3,17 @@ import React from 'react';
 class Game extends React.Component {
   render() {
     const onClick = this.props.onClick
-    // const clicked = this.props.clicked
-    const counter = this.props.counter
 
     return (
+      // console.log('TESTING:', this.props.board)
       <div>
-        <h1>{counter}</h1>
-        <button onClick={onClick}>CLICK ME!</button>
+        <h1>Find the treasure!</h1>
+        <div className="player_board">
+          <button key={1} onClick={onClick}>CLICK ME!</button>
+          <button key={2} onClick={onClick}>CLICK ME!</button>
+          <button key={3} onClick={onClick}>CLICK ME!</button>
+          <button key={4} onClick={onClick}>CLICK ME!</button>
+        </div>
       </div>
     )
   }
