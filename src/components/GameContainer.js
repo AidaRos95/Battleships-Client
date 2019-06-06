@@ -1,7 +1,7 @@
 import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
-import { buttonClicked, incrementCounter } from '../actions/actions'
+import { buttonClicked } from '../actions'
 
 class GameContainer extends React.Component {
   state = {
@@ -16,7 +16,6 @@ class GameContainer extends React.Component {
       this.setState({clicked: false})
     }
     this.props.buttonClicked(this.state.clicked)
-    this.props.incrementCounter(this.props.counter)
     console.log('STATE UPDATED:', this.state)
     console.log('THIS.PROPS.COUNTER:', this.props.counter)
   }
@@ -42,8 +41,7 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = {
-  buttonClicked,
-  incrementCounter
+  buttonClicked
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer);
