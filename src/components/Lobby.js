@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 class Lobby extends React.Component {
   render() {
-    console.log('Lobby this.props test:', this.props)
     const createGame = this.props.createGame
     const loadGame = this.props.loadGame
     const gameList = this.props.games.map(game => {

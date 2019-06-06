@@ -19,7 +19,7 @@ const users = (state = [], action) => {
 }
 
 const currentUser = (state = {}, action) => {
-  console.log('currentUser reducer action test:', action)
+  //console.log('currentUser reducer action test:', action)
   switch (action.type) {
     case 'NEW_USER':
       return action.payload
@@ -29,7 +29,7 @@ const currentUser = (state = {}, action) => {
 }
 
 const games = (state = [], action) => {
-  console.log('games reducer action test:', action)
+  //console.log('games reducer action test:', action)
   switch (action.type) {
     case 'GAME_CREATED':
       return [...state, action.payload]
