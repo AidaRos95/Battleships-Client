@@ -5,9 +5,16 @@ import socketset from 'socketset'
 
 const socket = socketset('localhost:4000')
 const middleware = applyMiddleware(socket, reduxThunk)
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
+  ? window.__REDUX_DEVTOOLS_EXTENSION__()
+  : (x) => {
+    console.warn('redux devTools disabled!')
+    
+    return x
+  }
 
 const enhancer = compose(middleware, devTools)
+console.log('reducer test:', reducer)
 const store = createStore(reducer, enhancer)
 store.dispatch({ type: 'SOCKETSET_CONNECT' })
 
