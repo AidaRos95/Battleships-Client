@@ -1,6 +1,5 @@
 import React from 'react';
 import Lobby from './Lobby'
-import request from 'superagent'
 import { connect } from 'react-redux'
 import { createGame } from '../actions'
 

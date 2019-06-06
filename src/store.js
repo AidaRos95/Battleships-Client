@@ -14,7 +14,7 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   }
 
 const enhancer = compose(middleware, devTools)
-console.log('reducer test:', reducer)
+//console.log('reducer test:', reducer)
 const store = createStore(reducer, enhancer)
 store.dispatch({ type: 'SOCKETSET_CONNECT' })
 

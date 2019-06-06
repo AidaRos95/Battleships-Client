@@ -1,20 +1,25 @@
 import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
-import { buttonClicked } from '../actions'
+import { createBoard, updateBoard } from '../actions'
 
 class GameContainer extends React.Component {
   state = {
     board: [0, 0, 0, 0]
   }
 
-  componentWillMount = () => {
-    console.log('EMPTY BOARD', this.state.board)
+  generateBoard = () => {
     const newBoard = this.state.board
-    const treasure = Math.floor(Math.random() * 4)
-    newBoard[treasure] = 1
-    console.log("BOARD:", newBoard)
+    const random = Math.floor(Math.random() * 4)
+    newBoard[random] = 1
     return newBoard
+  }
+  
+  componentWillMount = () => {
+    const board = this.generateBoard()
+    console.log("BOARD:", board)
+    this.props.createBoard(board)
+    console.log('Board created')
   }
 
   onClick = (event) => {
@@ -41,7 +46,7 @@ function mapStateToProps (state) {
 }
 
 const mapDispatchToProps = {
-  buttonClicked
+  createBoard
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer);
