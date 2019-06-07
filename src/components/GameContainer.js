@@ -1,7 +1,10 @@
+
 import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
 import { createBoard, checkBoard } from '../actions'
+import swal from "sweetalert";
+
 
 class GameContainer extends React.Component {
   state = {
@@ -30,7 +33,11 @@ class GameContainer extends React.Component {
     const button = parseInt(event.target.value)
 
     if (button === treasure) {
-      return console.log("Congratulations! You found the treasure!");
+      return swal({
+        text: "CORRECT!",
+        buttons: "OK",
+        icon: "success"
+      });
     } else {
       return console.log("Wrong answer");
     }
