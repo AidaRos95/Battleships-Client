@@ -19,3 +19,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.swal-modal {
+  height: 40vh;
+  width: 55vh;
+}
+.swal-button {
+  height: 6vh;
+  width: 25vh;
+}
+
+.swal-footer {
+  background-color: rgb(13, 165, 94);
+}
+.swal-title {
+  font-size: 3vh;
+}
+.swal-text {
+  font-size: 2vh;
+}
