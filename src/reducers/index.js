@@ -12,7 +12,6 @@ const users = (state = [], action) => {
       //   }
       return state
       //})
-    break;
     default:
       return state
   }
