@@ -15,6 +15,7 @@ class Lobby extends React.Component {
 
     return (
       <div>
+        <h1>Find the Treasure</h1>
         <a
           className=" col s2  waves-effect waves-light btn-large"
           key={1}
