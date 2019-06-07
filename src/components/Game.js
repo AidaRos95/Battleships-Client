@@ -2,8 +2,7 @@ import React from "react";
 
 class Game extends React.Component {
   render() {
-
-    const onClick = this.props.onClick
+    const onClick = this.props.onClick;
     //const board = this.props.board
 
     return (
@@ -14,7 +13,8 @@ class Game extends React.Component {
           <div className="row ">
             <button
               className="col s2  waves-effect waves-light btn-large "
-              key={1}
+              key={10}
+              value={1}
               onClick={onClick}
             >
               X
@@ -22,14 +22,16 @@ class Game extends React.Component {
 
             <button
               className="col s2 waves-effect waves-light btn-large"
-              key={2}
+              key={20}
+              value={2}
               onClick={onClick}
             >
               X
             </button>
             <button
               className="col s2 waves-effect waves-light btn-large"
-              key={3}
+              key={30}
+              value={3}
               onClick={onClick}
             >
               X
@@ -39,7 +41,8 @@ class Game extends React.Component {
           <div className="row ">
             <button
               className="col s2 waves-effect waves-light btn-large "
-              key={4}
+              key={40}
+              value={4}
               onClick={onClick}
             >
               X
@@ -47,14 +50,16 @@ class Game extends React.Component {
 
             <button
               className=" col s2  waves-effect waves-light btn-large"
-              key={5}
+              key={50}
+              value={5}
               onClick={onClick}
             >
               X
             </button>
             <button
               className="col s2 waves-effect waves-light btn-large"
-              key={6}
+              key={60}
+              value={6}
               onClick={onClick}
             >
               X
@@ -63,7 +68,8 @@ class Game extends React.Component {
           <div className="row ">
             <button
               className="col s2 waves-effect waves-light btn-large "
-              key={7}
+              key={70}
+              value={7}
               onClick={onClick}
             >
               X
@@ -71,20 +77,21 @@ class Game extends React.Component {
 
             <button
               className=" col s2  waves-effect waves-light btn-large"
-              key={8}
+              key={80}
+              value={8}
               onClick={onClick}
             >
               X
             </button>
             <button
               className="col s2 waves-effect waves-light btn-large"
-              key={9}
+              key={90}
+              value={9}
               onClick={onClick}
             >
               X
             </button>
           </div>
-
         </div>
       </div>
     );
