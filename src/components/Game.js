@@ -10,6 +10,7 @@ class Game extends React.Component {
         <h1>Find the treasure!</h1>
 
         <div className="player_board">
+
           <div className="row ">
             <button
               className="col s2  waves-effect waves-light btn-large "
@@ -92,6 +93,7 @@ class Game extends React.Component {
               X
             </button>
           </div>
+
         </div>
       </div>
     );
