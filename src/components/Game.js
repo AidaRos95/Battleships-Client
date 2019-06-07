@@ -2,10 +2,11 @@ import React from "react";
 
 class Game extends React.Component {
   render() {
-    const onClick = this.props.onClick;
+
+    const onClick = this.props.onClick
+    //const board = this.props.board
 
     return (
-      // console.log('TESTING:', this.props.board)
       <div>
         <h1>Find the treasure!</h1>
 
@@ -83,6 +84,7 @@ class Game extends React.Component {
               X
             </button>
           </div>
+
         </div>
       </div>
     );
