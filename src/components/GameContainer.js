@@ -1,7 +1,7 @@
 import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
-import { createBoard, updateBoard } from '../actions'
+import { createBoard } from '../actions'
 
 class GameContainer extends React.Component {
   state = {
@@ -17,21 +17,33 @@ class GameContainer extends React.Component {
   
   componentWillMount = () => {
     const board = this.generateBoard()
-    console.log("BOARD:", board)
     this.props.createBoard(board)
     console.log('Board created')
   }
 
   onClick = (event) => {
-    console.log('Click received!', event.target.id)
+    console.log('Click received!', event.target)
+    const values = Object.values(this.props.board)
+    const treasure = values.indexOf(1)
+    console.log('treasure:', treasure)
+    console.log(event.target.value)
+    const button = parseInt(event.target.value)
+    
+    if (button === treasure) {
+      return console.log('Congratulations! You found the treasure!')
+    } else {
+      return console.log('Wrong answer')
+    }
   }
 
   render() {
+    const board = this.props.board
+    console.log("BOARD:", board)
 
     return (
       <Game
         onClick={this.onClick}
-        // board={this.newBoard}
+        board={board}
       />
     )
   }
@@ -40,8 +52,7 @@ class GameContainer extends React.Component {
 function mapStateToProps (state) {
   return {
     users: state.users,
-    buttonClick: state.buttonClick,
-    counter: state.counter
+    board: state.board
   }
 }
 
