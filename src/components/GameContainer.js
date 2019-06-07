@@ -17,7 +17,8 @@ class GameContainer extends React.Component {
   };
 
   componentWillMount = () => {
-    // this.props.checkBoard();
+    const id = this.props.match.params.id
+    this.props.checkBoard(id)
 
     const board = this.generateBoard();
     this.props.createBoard(board);
@@ -42,8 +43,7 @@ class GameContainer extends React.Component {
 
   render() {
     const board = this.props.board;
-    console.log("BOARD:", board);
-
+    console.log("BOOOOOARD",this.props.board)
     return <Game onClick={this.onClick} board={board} />;
   }
 }

@@ -34,11 +34,16 @@ export const createBoard = board => {
   };
 };
 
-export const checkBoard = () => {
-  console.log("checkBoard test!");
-  return function dispatcher(dispatch) {
-    request.get(`${baseUrl}/boards/:id`).then(response => {
-      console.log("checkBoard response body", response);
-    });
-  };
-};
+export const checkBoard = (id) => {
+  console.log('checkBoard test!')
+  console.log('RECEIVED ID:', id)
+  return function dispatcher (dispatch) {
+    request
+      .get(`${baseUrl}/boards/${id}`)
+      .then(response => {
+          return
+      })
+      .catch(console.error)
+  }
+}
+
