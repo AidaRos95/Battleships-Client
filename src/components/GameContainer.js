@@ -17,7 +17,7 @@ class GameContainer extends React.Component {
   };
 
   componentWillMount = () => {
-    this.props.checkBoard();
+    // this.props.checkBoard();
 
     const board = this.generateBoard();
     this.props.createBoard(board);
