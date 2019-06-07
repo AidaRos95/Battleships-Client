@@ -1,21 +1,91 @@
-import React from 'react';
+import React from "react";
 
 class Game extends React.Component {
   render() {
-    const onClick = this.props.onClick
+    const onClick = this.props.onClick;
 
     return (
       // console.log('TESTING:', this.props.board)
       <div>
         <h1>Find the treasure!</h1>
+
         <div className="player_board">
-          <button key={1} onClick={onClick}>CLICK ME!</button>
-          <button key={2} onClick={onClick}>CLICK ME!</button>
-          <button key={3} onClick={onClick}>CLICK ME!</button>
-          <button key={4} onClick={onClick}>CLICK ME!</button>
+          <div className="row ">
+            <button
+              className="col s2  waves-effect waves-light btn-large "
+              key={1}
+              onClick={onClick}
+            >
+              X
+            </button>
+
+            <button
+              className="col s2 waves-effect waves-light btn-large"
+              key={2}
+              onClick={onClick}
+            >
+              X
+            </button>
+            <button
+              className="col s2 waves-effect waves-light btn-large"
+              key={3}
+              onClick={onClick}
+            >
+              X
+            </button>
+          </div>
+
+          <div className="row ">
+            <button
+              className="col s2 waves-effect waves-light btn-large "
+              key={4}
+              onClick={onClick}
+            >
+              X
+            </button>
+
+            <button
+              className=" col s2  waves-effect waves-light btn-large"
+              key={5}
+              onClick={onClick}
+            >
+              X
+            </button>
+            <button
+              className="col s2 waves-effect waves-light btn-large"
+              key={6}
+              onClick={onClick}
+            >
+              X
+            </button>
+          </div>
+          <div className="row ">
+            <button
+              className="col s2 waves-effect waves-light btn-large "
+              key={7}
+              onClick={onClick}
+            >
+              X
+            </button>
+
+            <button
+              className=" col s2  waves-effect waves-light btn-large"
+              key={8}
+              onClick={onClick}
+            >
+              X
+            </button>
+            <button
+              className="col s2 waves-effect waves-light btn-large"
+              key={9}
+              onClick={onClick}
+            >
+              X
+            </button>
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
