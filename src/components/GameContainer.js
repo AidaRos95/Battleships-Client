@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
@@ -5,17 +6,18 @@ import { createBoard } from '../actions'
 
 class GameContainer extends React.Component {
   state = {
-    board: [0, 0, 0, 0]
-  }
+    board: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  };
 
   generateBoard = () => {
-    const newBoard = this.state.board
-    const random = Math.floor(Math.random() * 4)
-    newBoard[random] = 1
-    return newBoard
-  }
-  
+    const newBoard = this.state.board;
+    const random = Math.floor(Math.random() * 9);
+    newBoard[random] = 1;
+    this.setState({ board: newBoard });
+  };
+
   componentWillMount = () => {
+
     const board = this.generateBoard()
     this.props.createBoard(board)
     console.log('Board created')
@@ -35,7 +37,8 @@ class GameContainer extends React.Component {
       return console.log('Wrong answer')
     }
   }
-
+    if (this.state.board[index] === 1) console.log(`WINNER!!`);
+  };
   render() {
     const board = this.props.board
     console.log("BOARD:", board)
@@ -46,18 +49,23 @@ class GameContainer extends React.Component {
         board={board}
       />
     )
+
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     users: state.users,
     board: state.board
   }
+
 }
 
 const mapDispatchToProps = {
   createBoard
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(GameContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameContainer);
