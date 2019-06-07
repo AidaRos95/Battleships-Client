@@ -3,7 +3,7 @@ import reduxThunk from "redux-thunk";
 import reducer from "./reducers";
 import socketset from "socketset";
 
-const socket = socketset("https://tranquil-dusk-80591.herokuapp.com/");
+const socket = socketset("https://tranquil-dusk-80591.herokuapp.com");
 const middleware = applyMiddleware(socket, reduxThunk);
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   ? window.__REDUX_DEVTOOLS_EXTENSION__()
