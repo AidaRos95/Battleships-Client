@@ -21,18 +21,18 @@ code {
 }
 .swal-modal {
   height: 40vh;
-  width: 55vh;
+  width: 35vh;
 }
 .swal-button {
   height: 6vh;
-  width: 25vh;
+  width: 20vh;
 }
 
 .swal-footer {
   background-color: rgb(13, 165, 94);
 }
 .swal-title {
-  font-size: 3vh;
+  font-size: 2vh;
 }
 .swal-text {
   font-size: 2vh;
