@@ -28,32 +28,27 @@ class GameContainer extends React.Component {
     const values = Object.values(this.props.board)
     const treasure = values.indexOf(1)
     const button = parseInt(event.target.value)
-    
+
     if (button === treasure) {
-      return console.log('Congratulations! You found the treasure!')
+      return console.log("Congratulations! You found the treasure!");
     } else {
-      return console.log('Wrong answer')
+      return console.log("Wrong answer");
     }
-  }
+  };
 
   render() {
-    const board = this.props.board
-    console.log("BOARD:", board)
+    const board = this.props.board;
+    console.log("BOARD:", board);
 
-    return (
-      <Game
-        onClick={this.onClick}
-        board={board}
-      />
-    )
+    return <Game onClick={this.onClick} board={board} />;
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     users: state.users,
     board: state.board
-  }
+  };
 }
 
 const mapDispatchToProps = {
@@ -61,4 +56,7 @@ const mapDispatchToProps = {
   checkBoard
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GameContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameContainer);
