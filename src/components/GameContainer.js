@@ -2,6 +2,7 @@ import React from 'react';
 import Game from './Game'
 import { connect } from 'react-redux'
 import { createBoard, checkBoard } from '../actions'
+import { async } from 'q';
 
 class GameContainer extends React.Component {
   state = {
@@ -15,13 +16,16 @@ class GameContainer extends React.Component {
     return newBoard
   }
   
-  componentWillMount = () => {
-    this.props.checkBoard()
+  componentWillMount = async () => {
+    const id = this.props.match.params.id
+    await this.props.checkBoard(id)
+    console.log("AASADNAKFAKJFNKJANDF",this.props.board)
     
     
+
     const board = this.generateBoard()
     this.props.createBoard(board)
-    console.log('Board created')
+    return console.log('Board created')
   }
 
   onClick = (event) => {
@@ -38,8 +42,7 @@ class GameContainer extends React.Component {
 
   render() {
     const board = this.props.board;
-    console.log("BOARD:", board);
-
+    console.log("BOOOOOARD",this.props.board)
     return <Game onClick={this.onClick} board={board} />;
   }
 }

@@ -18,23 +18,26 @@ const users = (state = [], action) => {
 }
 
 const board = (state = [], action) => {
+  console.log('Board reducer check!!!')
   switch (action.type) {
     case 'BOARD_CREATED':
+      return action.payload
+    case 'BOARD_FOUND':
       return action.payload
     default:
       return state
   }
 }
 
-const currentUser = (state = {}, action) => {
-  //console.log('currentUser reducer action test:', action)
-  switch (action.type) {
-    case 'NEW_USER':
-      return action.payload
-    default:
-      return state
-  }
-}
+// const currentUser = (state = {}, action) => {
+//   //console.log('currentUser reducer action test:', action)
+//   switch (action.type) {
+//     case 'NEW_USER':
+//       return action.payload
+//     default:
+//       return state
+//   }
+// }
 
 const games = (state = [], action) => {
   //console.log('games reducer action test:', action)
@@ -49,7 +52,7 @@ const games = (state = [], action) => {
 const reducer = combineReducers({ 
   users,
   board,
-  currentUser,
+  //currentUser,
   games
 })
 
